@@ -1,0 +1,50 @@
+.heading{
+    text-align: center;
+    font-size: 30px;
+    font: bold;
+    margin-bottom:10%;
+}
+.mainBody
+{
+    height: 100%;
+}
+.formElement
+{
+    border: 1.25px solid;
+    height: 1.25rem;
+    width: 99%;
+}
+.formElement::placeholder{
+    padding: 0.5rem;
+    cursor: default;
+}
+.formElementDiv{
+    margin: 1.5rem;
+}
+.btnsub
+{
+    height: 1.7rem;
+    border:1.5px solid;
+    border-radius: 10px;
+    width: 100%;
+}
+.btnsub:hover{
+    cursor: pointer;    
+}
+.footer{
+    text-align: center; 
+}
+.link{
+    border: none;
+    background: none!important;
+    padding: 0!important;
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+hr{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

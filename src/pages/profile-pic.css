@@ -1,0 +1,41 @@
+.profile-pic-box {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+img {
+    width: 45%;
+    aspect-ratio: 1/1;
+    border-radius:50% ;
+    object-fit: cover;
+    padding :3px;
+    border: 2px solid black;
+}
+
+.info-box{
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ip-sub-div{
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ip-img{
+    width: 27%;
+    margin: auto 1rem;
+}
+
+.subbtn
+{
+    margin: auto 1rem;
+}
+
+.name{
+    margin: 0.5rem;
+}

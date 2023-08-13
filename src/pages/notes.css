@@ -1,0 +1,42 @@
+.head{
+    display: flex;
+    margin-top:5.5rem ;
+}
+.title{
+    margin: auto;
+    margin-left: 45%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.time
+{
+    display: inline;
+    margin-right:2rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.description
+{
+    margin: 1rem 6rem;
+    margin-top: 2rem;
+}
+.btn-notes{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.description-area
+{
+    border: none;
+    font-size: 1.1rem;
+    resize: none;
+    /* padding: 1rem; */
+    background-color: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.btn-edit:hover{
+ transform: scale(1.1);
+ cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.outerdiv{
+    margin: 1rem;
+    height: 85%;
+}
+.titlediv
+{
+    width: 90%;
+    margin: auto;
+}
+.descriptiondiv
+{
+    width: 90%;
+    height: 60%;
+    margin: 1rem auto;
+}
+input{
+    width: 100%;
+    margin:0.5rem auto;
+    border: 1px solid black;
+}
+textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+form{
+    height: 100%;
+}
+.bttn-div{
+    float: right;
+    margin: 0.75rem 2rem;
+}
+.heading{
+    margin: 1rem;
+    font-size:1.5rem;
+}

@@ -1,0 +1,34 @@
+.popup-overlay {
+    /* background-color: rgba(222, 13, 13, 1); */
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    
+  }
+  .react-confirm-alert-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(0.3px);    
+    animation: react-confirm-alert-fadeIn 0.05s forwards ;
+    z-index: 1001;
+    /* opacity: ; */
+ }
+.popup-title{
+  font-size: larger;
+  font-weight: 500;
+  margin-bottom:0.5rem ;
+}
+.popup-message{
+  margin: 0rem 0rem 1rem 0rem;
+}
+.yes{
+  float: right;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+}
+.no{
+  margin-top: 1rem;
+}
+.ok{
+  margin-top: 1rem;
+  margin-left: 90%;
+}

@@ -1,0 +1,83 @@
+.navbar {
+    background-color:rgb(247, 189, 82);
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    position:fixed;
+    z-index: 100;
+    top: 0;
+    border: 2px solid red;
+}
+.navbar2{    
+    background-color: transparent;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    z-index: 100;   
+    position:fixed;
+    top: 0;
+}
+.nav-btn
+{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto 5rem;
+    justify-content:space-evenly;
+}
+.navbar2:hover .navitem:not(:hover)
+{
+       color: white;
+}
+.navitem {
+    padding: 0rem 2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    top: 30%;
+}
+.navitem-div{
+    height: 100%;
+}
+.navitem-div:hover{
+    box-shadow: inset -7px 1px 5px -3px rgba(0, 0, 0, 0.17);
+}
+.link-btn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;   
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.pp-div{
+    margin-left: auto;
+    right: 0;
+}
+.pp{
+    top: 0.2rem;
+    margin: 0.1rem 2rem 0rem 0rem ;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+.pp img{
+    height: 3rem;
+    width:3rem;
+    padding: 2px;
+    border: 2px solid white;
+}
+
+.back-btn{
+    height: 1.5rem;
+    width: 3rem;
+    margin-top: 1.25rem;
+    margin-left: 1rem;
+}
+.back-btn:hover{
+    transform: scale(1.2);
+}
