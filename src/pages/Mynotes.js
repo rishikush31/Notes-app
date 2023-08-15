@@ -32,7 +32,7 @@ export default function Mynotes({ handlefun }) {
     }
 
     // response from backend
-    const response = await fetch("http://localhost:5000/api/getMyNotes", {
+    const response = await fetch("/api/getMyNotes", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -102,7 +102,7 @@ export default function Mynotes({ handlefun }) {
             <button className='yes' onClick={async () => {
 
               //perform deletion 
-              await fetch("http://localhost:5000/api/deleteNote", {
+              await fetch("/api/deleteNote", {
                 method: "POST",
                 headers: {
                   'Content-Type': 'application/json'

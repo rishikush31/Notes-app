@@ -34,7 +34,7 @@ export default function EditNote({ setEdit }) {
         const date = getDate();
 
         // response from backend
-        const response = await fetch("http://localhost:5000/api/updateNote",
+        const response = await fetch("/api/updateNote",
             {
                 method: 'POST',
                 headers: {

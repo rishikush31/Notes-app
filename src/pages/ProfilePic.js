@@ -41,7 +41,7 @@ export default function ProfilePic({ setProfilePic }) {
 
     const handleSubmit = async () => {
         try {
-            await fetch("http://localhost:5000/api/uploadProfilePic",
+            await fetch("/api/uploadProfilePic",
                 {
                     method: 'POST',
                     headers: {

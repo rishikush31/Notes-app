@@ -85,7 +85,7 @@ export default function Navbar() {
             <button className='no' onClick={onClose}>No</button>
             <button className='yes' onClick={async () => {
               // delete from database
-              await fetch("http://localhost:5000/api/deleteUser", {
+              await fetch("/api/deleteUser", {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'

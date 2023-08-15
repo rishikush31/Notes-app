@@ -29,7 +29,7 @@ export default function CreateNote({setCreate}) {
         const date = getDate();
 
         // get response for creating note
-        const response = await fetch("http://localhost:5000/api/createNote",
+        const response = await fetch("/api/createNote",
             {
                 method: 'POST',
                 headers: {

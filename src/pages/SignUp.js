@@ -18,7 +18,7 @@ export default function SignUp({ setLogin, setSignup }) {
         e.preventDefault();
 
         //response from backend   
-        const response = await fetch("http://localhost:5000/api/createUser", {
+        const response = await fetch("/api/createUser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
