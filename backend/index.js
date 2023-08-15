@@ -1,4 +1,7 @@
 //import express
+const path=  require('path');
+
+
 const express = require('express');
 
 //create instance of server
@@ -10,6 +13,8 @@ app.use(express.json({limit: '50mb'}));
 //cors required for external server use
 const cors =require ("cors");   
 app.use(cors());
+
+app.use(express.static(path.resolve(__dirname,'../build')));
 
 //start server
 const port = 5000;
