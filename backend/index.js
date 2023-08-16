@@ -1,7 +1,6 @@
 //import express
 const path=  require('path');
 
-
 const express = require('express');
 
 //create instance of server
@@ -27,6 +26,15 @@ app.get('/',(request,response)=>{
     response.send("done");
 });
 
+//react route setup
+app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    });
+  });
+  
 //add /api/createUser route to router
 const createUser=require("./Routes/user");
 app.use('/api/',createUser);
