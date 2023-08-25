@@ -2,10 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
+import { LoginSocialGoogle } from 'reactjs-social-login';
+import { GoogleLoginButton } from 'react-social-login-buttons';
 import "react-confirm-alert/src/react-confirm-alert.css";
 import '../pages/customui.css';
 import './login-signin.css';
-
 export default function Login({ setLogin, setSignup }) {
 
   //states of credentials 
@@ -42,7 +43,7 @@ export default function Login({ setLogin, setSignup }) {
             <div className='popup-overlay'>
               <div className='popup-title'>Problem:</div>
               <div className='popup-message'>{`${json.message}`}</div>
-              <hr/>
+              <hr />
               <button className='ok' onClick={onClose}>ok</button>
             </div>
           )
@@ -90,6 +91,41 @@ export default function Login({ setLogin, setSignup }) {
         </form>
       </div>
       <div className='footer'>
+
+        <LoginSocialGoogle
+          client_id={"118951462616-r1i3j0fjl3bcr3snhfk90fvdl81qa87u.apps.googleusercontent.com"}
+          scope="openid profile email"
+          discoveryDocs="claims_supported"
+          access_type="offline"
+          onResolve={async ({ provider, data }) => {
+            console.log(data);
+            const response = await fetch("/api/socialLogin", {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                email: data.email,
+                name: data.name,
+                myProfilePic: data.pitcure
+              })
+            })
+
+            const json = await response.json();
+
+            localStorage.setItem("notesAppEmail", json.email)
+            localStorage.setItem("notesAppAuthToken", json.authToken)
+            localStorage.setItem("notesAppName", json.name)
+            localStorage.setItem("notesAppProfilePic", json.myProfilePic)
+
+            navigate('/')
+
+          }}
+          onReject={(err) => {
+            console.log(err);
+          }}>
+          <GoogleLoginButton style={{margin:"1rem auto",width:"25rem",text:"none",borderRadius:"10rem"}}/>
+        </LoginSocialGoogle>
         <div className='footerElementhr'>
           <hr />
         </div>

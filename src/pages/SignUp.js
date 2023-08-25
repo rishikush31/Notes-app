@@ -1,14 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { confirmAlert } from 'react-confirm-alert';
 import "react-confirm-alert/src/react-confirm-alert.css";
 import '../pages/customui.css';
 import './login-signin.css';
+import { LoginSocialGoogle } from 'reactjs-social-login';
+import { GoogleLoginButton } from 'react-social-login-buttons';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp({ setLogin, setSignup }) {
 
-    // navigate for navigating to login after signup
     let navigate = useNavigate();
 
     //state for credential   
@@ -52,7 +53,8 @@ export default function SignUp({ setLogin, setSignup }) {
 
         // if signup is success ,navigate to login page
         if (json.success) {
-            navigate('/login')
+            setLogin(true);
+            setSignup(false) ;
         }
     }
     const onChange = (event) => {
@@ -81,6 +83,42 @@ export default function SignUp({ setLogin, setSignup }) {
                         <button type="submit" className="btnsub">Submit</button>
                     </div>
                 </form>
+                
+        <LoginSocialGoogle
+          client_id={"118951462616-r1i3j0fjl3bcr3snhfk90fvdl81qa87u.apps.googleusercontent.com"}
+          scope="openid profile email"
+          discoveryDocs="claims_supported"
+          access_type="offline"
+          onResolve={async ({ provider, data }) => {
+            console.log(data);
+            const response = await fetch("/api/socialLogin", {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                email: data.email,
+                name: data.name,
+                myProfilePic: data.pitcure
+              })
+            })
+
+            const json = await response.json();
+
+            localStorage.setItem("notesAppEmail", json.email)
+            localStorage.setItem("notesAppAuthToken", json.authToken)
+            localStorage.setItem("notesAppName", json.name)
+            localStorage.setItem("notesAppProfilePic", json.myProfilePic)
+
+            navigate('/')
+
+          }}
+          onReject={(err) => {
+            console.log(err);
+          }}>
+          <GoogleLoginButton style={{margin:"1rem auto",width:"25rem",text:"none",borderRadius:"10rem"}}/>
+        </LoginSocialGoogle>
+
             </div>
             <div className='footer'>
                 <div className='footerElementhr'>

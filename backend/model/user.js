@@ -11,14 +11,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        password:
-        {
-            type: String,
-            required: true
-        },
         location: {
             type: String,
-            required: true
+            required: false
+            
         },
         myProfilePic: {
             type:String

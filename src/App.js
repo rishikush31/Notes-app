@@ -12,33 +12,34 @@ import {
 } from "react-router-dom";
 function App() {
   return (
-    <Router>
-      <>
-        <Routes>
-          <Route path="/" element={<TempHead />} >
+      <Router>
+        <>
+          <Routes>
+            <Route path="/" element={<TempHead />} >
 
-            <Route index element={<Home />} />
+              <Route index element={<Home />} />
 
-            <Route path="/about" element={<About />} />
+              <Route path="/about" element={<About />} />
 
-            <Route path="/mynotes" element={<TempMyNotes />} >
+              <Route path="/mynotes" element={<TempMyNotes />} >
 
-              <Route index element={<Mynotes />} />
+                <Route index element={<Mynotes />} />
 
-              {/* <Route path="note" element={<Tempnote />} > */}
+                {/* <Route path="note" element={<Tempnote />} > */}
 
                 <Route path="note" element={<Note />} />
 
-              {/* </Route> */}
+                {/* </Route> */}
+
+              </Route>
 
             </Route>
 
-          </Route>
+          </Routes>
 
-        </Routes>
+        </>
+      </Router>
 
-      </>
-    </Router>
   );
 }
 export default App;

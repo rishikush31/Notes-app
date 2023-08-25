@@ -147,13 +147,13 @@ export default function Navbar() {
               ?
               <>
                 <div className='navitem-div'>
-                  <button className='link-btn navitem' onClick={() => { setLogin(true); }}>Login</button>
+                  <button className='link-btn navitem' onClick={(e) => {e.preventDefault(); e.stopPropagation(); setLogin(true); }}>Login</button>
                 </div>
                 <div className='navitem-div'>
-                  <button className='link-btn navitem' onClick={() => { setSignup(true); }}>SignUp</button>
+                  <button className='link-btn navitem' onClick={(e) => {e.preventDefault(); e.stopPropagation(); setSignup(true); }}>SignUp</button>
                 </div>
-                {login ? <Modal onClose={() => { setLogin(false); }}><Login setLogin={setLogin} setSignup={setSignup}></Login></Modal> : ""}
-                {signup ? <Modal onClose={() => { setSignup(false); }}><Signup setLogin={setLogin} setSignup={setSignup}></Signup></Modal> : ""}
+                {login ? <Modal onClose={(e) => {e.preventDefault(); e.stopPropagation(); setLogin(false); }}><Login setLogin={setLogin} setSignup={setSignup}></Login></Modal> : ""}
+                {signup ? <Modal onClose={(e) => {e.preventDefault(); e.stopPropagation(); setSignup(false); }}><Signup setLogin={setLogin} setSignup={setSignup}></Signup></Modal> : ""}
               </>
               :
               <>

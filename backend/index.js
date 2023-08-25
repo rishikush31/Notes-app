@@ -67,6 +67,10 @@ app.use('/api/',deleteUser);
 const uploadProfilePic=require("./Routes/profile");
 app.use('/api/',uploadProfilePic);
 
+// add /api/socialLogin route
+const socialLogin=require("./Routes/SocialLogin");
+app.use('/api/',socialLogin);
+
 //connect to database
 const dbconnect=require("./database");
 dbconnect();

@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const jwtSecret = "MYnameisRishiKushFoodwebsiteHello";
-const User = require('../model/user')
+const userCredential = require('../model/userCredential')
 
 exports.loginValidator = async (req, res) => {
 
@@ -17,7 +17,7 @@ exports.loginValidator = async (req, res) => {
     let email = req.body.email;
 
     // find the user object 
-    let userData = await User.findOne({ email });
+    let userData = await userCredential.findOne({ email });
 
     // if we dont find the user object that means that no such email is registered 
     if (!userData) {
